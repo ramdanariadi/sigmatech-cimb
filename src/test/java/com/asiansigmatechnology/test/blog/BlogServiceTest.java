@@ -6,7 +6,7 @@ import com.asiansigmatechnology.test.exception.ApiRequestException;
 import com.asiansigmatechnology.test.role.RoleRepository;
 import com.asiansigmatechnology.test.user.User;
 import com.asiansigmatechnology.test.user.UserRepository;
-import com.asiansigmatechnology.test.user.UserService;
+import com.asiansigmatechnology.test.user.UserServiceImpl;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -32,7 +32,7 @@ class BlogServiceTest {
     @Mock
     BlogRepository blogRepository;
 
-    UserService userService;
+    UserServiceImpl userServiceImpl;
 
     @Mock
     UserRepository userRepository;
@@ -46,7 +46,7 @@ class BlogServiceTest {
     @BeforeEach
     void setUp() {
         blogService = new BlogServiceImpl(blogRepository, userRepository);
-        userService = new UserService(userRepository, roleRepository, encoder);
+        userServiceImpl = new UserServiceImpl(userRepository, roleRepository, encoder);
     }
 
     @AfterEach

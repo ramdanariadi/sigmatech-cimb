@@ -28,17 +28,17 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import com.asiansigmatechnology.test.user.UserService;
+import com.asiansigmatechnology.test.user.UserServiceImpl;
 import io.vertx.core.json.JsonObject;
 
 public class MyAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
     private final AuthenticationManager authenticationManager;
-    private UserService userService;
+    private UserServiceImpl userServiceImpl;
 
-    public MyAuthenticationFilter(AuthenticationManager authenticationManager, UserService userService) {
+    public MyAuthenticationFilter(AuthenticationManager authenticationManager, UserServiceImpl userServiceImpl) {
         this.authenticationManager = authenticationManager;
-        this.userService = userService;
+        this.userServiceImpl = userServiceImpl;
     }
 
     @Override
@@ -65,7 +65,7 @@ public class MyAuthenticationFilter extends UsernamePasswordAuthenticationFilter
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authentication) throws IOException, ServletException {
         User user = (User) authentication.getPrincipal();
         Algorithm algorithm = TokenGenerationAlgorithm.algorithm;
-        com.asiansigmatechnology.test.user.User rawUser = userService.getUserByUsername(user.getUsername());
+        com.asiansigmatechnology.test.user.User rawUser = userServiceImpl.getUserByUsername(user.getUsername());
 
         String access_token = JWT.create()
                 .withSubject(user.getUsername())

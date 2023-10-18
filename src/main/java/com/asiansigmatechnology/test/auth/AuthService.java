@@ -1,7 +1,7 @@
 package com.asiansigmatechnology.test.auth;
 
 import com.asiansigmatechnology.test.config.security.TokenGenerationAlgorithm;
-import com.asiansigmatechnology.test.user.UserService;
+import com.asiansigmatechnology.test.user.UserServiceImpl;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -21,11 +21,11 @@ import java.util.stream.Collectors;
 @Service
 public class AuthService {
 
-    UserService userService;
+    UserServiceImpl userServiceImpl;
 
     @Autowired
-    public AuthService(UserService userService){
-        this.userService = userService;
+    public AuthService(UserServiceImpl userServiceImpl){
+        this.userServiceImpl = userServiceImpl;
     }
 
     public Map<String, Object> token(String authorization){
@@ -38,7 +38,7 @@ public class AuthService {
             JWTVerifier jwtVerifier = JWT.require(algorithm).build();
             DecodedJWT decodedJWT = jwtVerifier.verify(refresh_token);
             String username = decodedJWT.getSubject();
-            User user = userService.getUserByUsername(username);
+            User user = userServiceImpl.getUserByUsername(username);
             String access_token = JWT.create()
                     .withSubject(username)
                     .withClaim("roles",user.getRoles().stream().map(Role::getName).collect(Collectors.toList()))
