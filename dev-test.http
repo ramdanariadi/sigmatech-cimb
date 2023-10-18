@@ -1,0 +1,88 @@
+### register
+POST http://localhost:8080/api/v1/user/register
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin",
+  "name" : "Admin Blog"
+}
+
+### login
+POST http://localhost:8080/api/v1/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "rahasia"
+}
+
+### ADD BLOG
+POST http://localhost:8080/api/v1/blog
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIkFETUlOIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9hcGkvdjEvbG9naW4iLCJ4LWN1c3RvbS1pZCI6eyJ1c2VySWQiOiIyMGY0ZmMwZi01NWJmLTRhYmEtODliZS04YWRlOGYwMGY1NjQifSwiZXhwIjoxNjk3NjkxMjg4fQ.mHmwl4-FONPly41Y7FFiK3jHt6hzn2eKXp4PBFHEe2g
+
+{
+  "title": "Tunas Blog2",
+  "body": "isi dari blog2"
+}
+
+### GET BLOG BY ID
+GET http://localhost:8080/api/v1/blog/32df6048-995e-4c5f-8ece-639cb22fb734
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIkFETUlOIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9hcGkvdjEvbG9naW4iLCJ4LWN1c3RvbS1pZCI6eyJ1c2VySWQiOiIyMGY0ZmMwZi01NWJmLTRhYmEtODliZS04YWRlOGYwMGY1NjQifSwiZXhwIjoxNjk3NjkxMjg4fQ.mHmwl4-FONPly41Y7FFiK3jHt6hzn2eKXp4PBFHEe2g
+
+### UPDATE BLOG
+PUT http://localhost:8080/api/v1/blog/32df6048-995e-4c5f-8ece-639cb22fb734
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIkFETUlOIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9hcGkvdjEvbG9naW4iLCJ4LWN1c3RvbS1pZCI6eyJ1c2VySWQiOiIyMGY0ZmMwZi01NWJmLTRhYmEtODliZS04YWRlOGYwMGY1NjQifSwiZXhwIjoxNjk3NjkxMjg4fQ.mHmwl4-FONPly41Y7FFiK3jHt6hzn2eKXp4PBFHEe2g
+
+{
+  "title": "Tunas Blog update",
+  "body": "isi dari blog update"
+}
+
+### DELETE BLOG
+DELETE http://localhost:8080/api/v1/blog/32df6048-995e-4c5f-8ece-639cb22fb734
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIkFETUlOIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9hcGkvdjEvbG9naW4iLCJ4LWN1c3RvbS1pZCI6eyJ1c2VySWQiOiIyMGY0ZmMwZi01NWJmLTRhYmEtODliZS04YWRlOGYwMGY1NjQifSwiZXhwIjoxNjk3NjkxMjg4fQ.mHmwl4-FONPly41Y7FFiK3jHt6hzn2eKXp4PBFHEe2g
+
+### GET BLOG
+GET http://localhost:8080/api/v1/blog?pageIndex=1&pageSize=1
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIkFETUlOIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9hcGkvdjEvbG9naW4iLCJ4LWN1c3RvbS1pZCI6eyJ1c2VySWQiOiIyMGY0ZmMwZi01NWJmLTRhYmEtODliZS04YWRlOGYwMGY1NjQifSwiZXhwIjoxNjk3NjkxMjg4fQ.mHmwl4-FONPly41Y7FFiK3jHt6hzn2eKXp4PBFHEe2g
+
+### GET ALL USERS
+GET http://localhost:8080/api/v1/user
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIkFETUlOIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9hcGkvdjEvbG9naW4iLCJ4LWN1c3RvbS1pZCI6eyJ1c2VySWQiOiIyMGY0ZmMwZi01NWJmLTRhYmEtODliZS04YWRlOGYwMGY1NjQifSwiZXhwIjoxNjk3NjkxMjg4fQ.mHmwl4-FONPly41Y7FFiK3jHt6hzn2eKXp4PBFHEe2g
+
+
+### REFRESH TOKEN
+GET http://localhost:8080/api/v1/token
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIkFETUlOIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9hcGkvdjEvbG9naW4iLCJ4LWN1c3RvbS1pZCI6eyJ1c2VySWQiOiIyMGY0ZmMwZi01NWJmLTRhYmEtODliZS04YWRlOGYwMGY1NjQifSwiZXhwIjoxNjk3NjkxMjg4fQ.mHmwl4-FONPly41Y7FFiK3jHt6hzn2eKXp4PBFHEe2g
+
+### ADD ROLE
+POST http://localhost:8080/api/v1/role
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIkFETUlOIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9hcGkvdjEvbG9naW4iLCJ4LWN1c3RvbS1pZCI6eyJ1c2VySWQiOiIyMGY0ZmMwZi01NWJmLTRhYmEtODliZS04YWRlOGYwMGY1NjQifSwiZXhwIjoxNjk3NjkxMjg4fQ.mHmwl4-FONPly41Y7FFiK3jHt6hzn2eKXp4PBFHEe2g
+
+{
+  "name": "ADMIN"
+}
+
+### GET ALL ROLES
+GET http://localhost:8080/api/v1/role
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIkFETUlOIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9hcGkvdjEvbG9naW4iLCJ4LWN1c3RvbS1pZCI6eyJ1c2VySWQiOiIyMGY0ZmMwZi01NWJmLTRhYmEtODliZS04YWRlOGYwMGY1NjQifSwiZXhwIjoxNjk3NjkxMjg4fQ.mHmwl4-FONPly41Y7FFiK3jHt6hzn2eKXp4PBFHEe2g
+
+### GRANT ROLE
+POST http://localhost:8080/api/v1/user/role/bbe2b66b-e63a-44f8-8491-84f8774f385e/c7c19b8a-d5f3-492f-954b-40dc65acd051
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIkFETUlOIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9hcGkvdjEvbG9naW4iLCJ4LWN1c3RvbS1pZCI6eyJ1c2VySWQiOiIyMGY0ZmMwZi01NWJmLTRhYmEtODliZS04YWRlOGYwMGY1NjQifSwiZXhwIjoxNjk3NjkxMjg4fQ.mHmwl4-FONPly41Y7FFiK3jHt6hzn2eKXp4PBFHEe2g
+
+### REVOKE ROLE
+DELETE http://localhost:8080/api/v1/user/role/bbe2b66b-e63a-44f8-8491-84f8774f385e/c7c19b8a-d5f3-492f-954b-40dc65acd051
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIkFETUlOIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9hcGkvdjEvbG9naW4iLCJ4LWN1c3RvbS1pZCI6eyJ1c2VySWQiOiIyMGY0ZmMwZi01NWJmLTRhYmEtODliZS04YWRlOGYwMGY1NjQifSwiZXhwIjoxNjk3NjkxMjg4fQ.mHmwl4-FONPly41Y7FFiK3jHt6hzn2eKXp4PBFHEe2g
