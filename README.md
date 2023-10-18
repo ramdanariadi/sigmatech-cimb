@@ -10,8 +10,7 @@ A java application using springboot 2.7.16
 
 * Run
 ```
-    $ git clone https://github.com/ramdanariadi/grocery-be.git
-    $ docker-compose up -d
-    $ mvn spring-boot:run
+    $ git clone git@github.com:ramdanariadi/sigmatech-cimb.git
+    $ docker-compose up
 ```
 The application should now be running on localhost:8080
