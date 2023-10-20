@@ -73,7 +73,7 @@ class BlogServiceTest {
     }
 
     @Test
-    void addCategory() {
+    void addBlog() {
         // given
         AddBlogDTO.Request request = new AddBlogDTO.Request("Blog title", "body");
         UUID userId = UUID.randomUUID();
@@ -92,7 +92,7 @@ class BlogServiceTest {
     }
 
     @Test
-    void addCategoryShouldThrownError(){
+    void addBlogShouldThrownError(){
         // given
         AddBlogDTO.Request request = new AddBlogDTO.Request("", "body");
         UUID userId = UUID.randomUUID();
@@ -105,7 +105,7 @@ class BlogServiceTest {
     }
 
     @Test
-    void updateCategory(){
+    void updateBlog(){
         // given
         UUID userId = UUID.randomUUID();
         UUID blogId = UUID.randomUUID();
@@ -126,7 +126,7 @@ class BlogServiceTest {
     }
 
     @Test
-    void updateCategoryShouldThrownError(){
+    void updateBlogShouldThrownError(){
         // given
         UUID userId = UUID.randomUUID();
         UUID blogId = UUID.randomUUID();
@@ -140,7 +140,7 @@ class BlogServiceTest {
     }
 
     @Test
-    void destroyCategory(){
+    void destroyBlog(){
         // given
         UUID userId = UUID.randomUUID();
         UUID blogId = UUID.randomUUID();
